@@ -10,6 +10,11 @@
         // Creates:
         //
         var directive = {
+            scope : {
+                task : '=',
+                save : '=',
+                day : '='
+            },
             link: link,
             restrict: 'E',
             transclude : true,
@@ -18,6 +23,10 @@
         return directive;
 
         function link(scope, element, attrs) {
-        	scope.isOn = false;
+            
+            scope.setInvoice = function(){
+                scope.task.isInvoiced = !scope.task.isInvoiced;
+                scope.save(scope.task, scope.day);
+            }
         }
     }

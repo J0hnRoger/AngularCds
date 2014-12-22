@@ -83,6 +83,8 @@
             var serialized = JSON.parse(angular.toJson(task));
             var url = dateService.getTasksUrl(new Date(task.startDate)) + "tasks/" + task.startDate;
             var taskRef = new Firebase(url);
+            //Check if the task exists, if yes, load the data and add duration to startDate.
+            
             taskRef.set(serialized, onCompleted);
         }
     }

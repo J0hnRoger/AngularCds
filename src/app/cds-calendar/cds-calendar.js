@@ -43,10 +43,12 @@
         }
 
         $scope.add = function(day) {
-            var key = new Date().getTime();
+            var lastTask = _.last(day.tasks);
+            var startDate = lastTask.startDate + parseInt(lastTask.duration) * 1000;
+
             var defaultTask = { 
                     duration : 3600,
-                    startDate : day.startDate,
+                    startDate : startDate,
                     project : { title : "Default", color : "grey"}
             };
 

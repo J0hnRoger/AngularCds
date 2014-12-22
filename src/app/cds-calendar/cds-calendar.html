@@ -23,7 +23,7 @@
 				<span class="hour"><span class="glyphicon glyphicon glyphicon-euro"></span>
 				<span class="hour" >{{task.duration | invoicedTime}}</span>
 				<p><input class="red" type="text" ng-model="task.description" ng-blur="save(task, day)"></input></p>
-				<toggle/>		
+				<toggle task="task" save="save" day="day"/>	
 			</div>
 		</div>
 	</div>

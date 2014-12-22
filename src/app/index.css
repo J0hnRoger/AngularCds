@@ -110,4 +110,6 @@
     background-color: #0088cc;
     background-image: none;
 }
+
+.ui-helper-hidden-accessible {display: none;}
 /*Theme*/
