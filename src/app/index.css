@@ -1,0 +1,113 @@
+/*Base*/
+
+.blue{ background-color: #5db2ff;}
+.dark-blue{background-color: #0072c6;}
+.red{ background-color: #ED5564;}
+.dark-red {background-color: #ac193d;}
+.green{ background-color: #48CFAE;}
+.light-green{ background-color: #82ba00;}
+.dark-green{background-color: #008a17;}
+.azur{ background-color: #66FFFF;}
+.orange{ background-color: #ff8f32;}
+.light-blue {background-color: #5db2ff;}
+.dark-orange {background-color: #d24726;}
+.pink {background-color: #dc4fad;}
+.grey {background-color: #A9A9A9;}
+/*Layout*/
+
+/*Module*/
+.cds-calendar-view {margin:0 auto;}
+.cds-calendar-view .day{padding:10px;text-align: center;border-right: solid 1px black;height: 815px;}
+.cds-calendar-view .task{margin: 5px;padding: 5px;min-height: 170px}
+.cds-calendar-view .task input{border-style: none;color:white; background-color: transparent;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input:focus{border-style: none;color:white;outline: none;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input.edit-hour {width:35px;}
+.cds-calendar-view .glyphicon {font-size: 20px;}
+.cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px; color: #333333}
+.cds-calendar-view .glyphicon-plus {text-shadow:none; border:none;font-size: 20px; display: inline-block;float: right;}
+.cds-calendar-view .task .edit-title {font-size: 18px;font-weight: 500;display: block;margin:0 auto; width: 80px;text-align: center}
+.cds-calendar-view .task .task-hour {float: left;font-size: 18px}
+.cds-calendar-view .task .toggle{position: relative;}
+
+.task-bumper-view {height: 100%;}
+.task-bumper-view .project{ margin:3px;text-align: center;min-height: 137px}
+.task-bumper-view .project h3{display:block;}
+
+.invoice-view table input{width:35px;}
+/*State*/
+.animated.ng-enter,
+.animated.ng-leave {
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+} 
+
+.animated.ng-leave.animated.ng-leave-active,
+.animated.ng-enter {
+    -webkit-transform: rotateX(-180deg) translatez(30px);
+    -moz-transform: rotateX(-180deg) translatez(30px);
+    -ms-transform: rotateX(-180deg) translatez(30px);
+    -o-transform: rotateX(-180deg) translatez(30px);
+    transform: rotateX(-180deg) translatez(30px);
+    opacity: 0;
+    height: 0px;
+}        
+
+.animated.ng-enter.animated.ng-enter-active,
+.animated.ng-leave {
+    -webkit-transform: rotateX(0deg) translatez(30px);
+    -moz-transform: rotateX(0deg) translatez(30px);
+    -ms-transform: rotateX(0deg) translatez(30px);
+    -o-transform: rotateX(0deg) translatez(30px);
+    transform: rotateX(0deg) translatez(30px);
+    opacity: 1;
+    height: 30px;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0088cc;
+    background-image: none;
+}
+/*Theme*/

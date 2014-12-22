@@ -1,0 +1,76 @@
+.icon {
+  position: relative;
+  left: 80px;
+  border-radius: 70px;
+  background-color: #EFF4FF;
+  box-shadow: 0 2px 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  width: 129px;
+  height: 56px;
+  margin-right: 40px;
+  overflow: hidden;
+  -webkit-transition: all .25s linear;
+  -moz-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.icon .handle {
+  width: 54px;
+  height: 54px;
+  border-radius: 70px;
+  position: absolute;
+  top: 2px;
+  background: #FFF;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0px 4px 23px 0 rgba(0, 0, 0, 0.08), -2px 4px 4px 0 rgba(0, 0, 0, 0.1);
+  font-size: 10px;
+  line-height: 11px;
+  color: #6D808E;
+  text-decoration: none;
+  font-size: 22px;
+  color: #D8DAD9;
+  line-height: 54px;
+  text-align: center;
+  left: 2px;
+  -webkit-transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+  -moz-transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+  -o-transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+  transition: all 0.4s cubic-bezier(0.33, 1.6, 0.66, 1);
+}
+.icon .handle:before {
+  -webkit-font-smoothing: antialiased;
+}
+.icon .handle:after {
+  content: "ON";
+  font-size: 29px;
+  font-weight: 200;
+  color: #FFF;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: -55px;
+}
+.icon.on {
+  background: #FFA400;
+}
+.icon.on .handle {
+  left: 75px;
+  color: #FFA400;
+}
+.icon.on.red {
+  background: #FF3333;
+}
+.icon.on.red .handle {
+  color: #FF3333;
+}
+.icon.on.green {
+  background: #B1CA39;
+}
+.icon.on.green .handle {
+  color: #B1CA39;
+}
