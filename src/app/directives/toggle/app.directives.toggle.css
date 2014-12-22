@@ -47,8 +47,8 @@
   -webkit-font-smoothing: antialiased;
 }
 .icon .handle:after {
-  content: "ON";
-  font-size: 29px;
+  content: "facturé";
+  font-size: 16px;
   font-weight: 200;
   color: #FFF;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
