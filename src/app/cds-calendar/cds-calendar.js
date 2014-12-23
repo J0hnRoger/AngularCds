@@ -27,12 +27,18 @@
         $scope.save = function (task, day ) {
           var taskRef = tasksService.getTask(task.$id);
           task.project = _.omit(task.project, ['$$hashKey', '$id', '$priority'])
-          taskRef.$set(_.omit(task, ['$$hashKey', '$id', '$priority'])).then(function () {
+          taskRef.$set(_.omit(task, ['$$hashKey', '$id', '$priority']))
+          .then(function () {
           }).then(function () {
             toaster.pop('success', "Yeah", "Tâche sauvegardée");
           }, function (err) {
             toaster.pop('error', "Oh no..", err);
           });
+
+          if (task.isInvoiced)
+            tasksService.setInvoicedTask(task);
+          else
+            tasksService.resetInvoicedTask(task);
         };
 
         $scope.remove = function (task, day) {
@@ -44,7 +50,10 @@
 
         $scope.add = function(day) {
             var lastTask = _.last(day.tasks);
-            var startDate = lastTask.startDate + parseInt(lastTask.duration) * 1000;
+            //If it's the first task of the day, day.tasks is undefined, so take the day.startDate, else, set the startDate after the last element. 
+            var startDate = (lastTask === undefined) 
+                    ? day.startDate
+                    : lastTask.startDate + parseInt(lastTask.duration) * 1000;
 
             var defaultTask = { 
                     duration : 3600,
@@ -52,7 +61,7 @@
                     project : { title : "Default", color : "grey"}
             };
 
-            tasksService.add(defaultTask, day, function(ref){
+            tasksService.add(defaultTask, function(ref){
                 toaster.pop('success', 'Owh, nice', "Tâche créée");
             });
         }

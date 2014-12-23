@@ -15,7 +15,9 @@
             getTask : getTask,
             add : add,
             updateTask : updateTask,
-            remove : remove
+            remove : remove,
+            setInvoicedTask : setInvoicedTask,
+            resetInvoicedTask : resetInvoicedTask
         };
         return service;
 
@@ -79,12 +81,27 @@
             taskRef.remove();
         }
 
-        function add (task, day, onCompleted){
-            var serialized = JSON.parse(angular.toJson(task));
+        function add (task, onCompleted){
             var url = dateService.getTasksUrl(new Date(task.startDate)) + "tasks/" + task.startDate;
+            setTask(url, task, onCompleted)
+        }
+
+        function setInvoicedTask(task, onCompleted){
+            var startDate = new Date(task.startDate);
+            var url = FireBaseRoot+ "invoices/" + startDate.getFullYear() + '/' + (startDate.getMonth() + 1) + '/' + task.project.title + "/tasks/" + task.startDate;
+            setTask(url, task, onCompleted);
+        }
+
+        function resetInvoicedTask(task){
+             var startDate = new Date(task.startDate);
+            var url = FireBaseRoot+ "invoices/" + startDate.getFullYear() + '/' + (startDate.getMonth() + 1) + '/' + task.project.title + "/tasks/" + task.startDate;
             var taskRef = new Firebase(url);
-            //Check if the task exists, if yes, load the data and add duration to startDate.
-            
+            taskRef.remove();
+        }
+        
+        function setTask (url, task, onCompleted){
+            var taskRef = new Firebase(url);
+            var serialized = _.omit(task, ['$$hashKey', '$id', '$priority']);
             taskRef.set(serialized, onCompleted);
         }
     }
