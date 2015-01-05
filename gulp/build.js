@@ -9,7 +9,7 @@ var $ = require('gulp-load-plugins')({
 gulp.task('injector:css', ['wiredep'], function () {
   return gulp.src('src/index.html')
     .pipe($.inject(gulp.src([
-        'src/{app,components}/**/*.css'
+        'src/{app}/**/*.css'
       ], {read: false}), {
       ignorePath: 'src',
       addRootSlash: false

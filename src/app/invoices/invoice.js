@@ -4,45 +4,25 @@
         .module('app.invoice', [])
         .controller('invoiceCtrl', invoiceCtrl);
 
-    function invoiceCtrl($scope, $firebase, FireBaseRoot) {
+    function invoiceCtrl($scope, $firebase, FireBaseRoot,_) {
 
-        $scope.invoicedMonth = new Date();
-        
-        $scope.SelectProject = function () {
-        	var month = $scope.invoicedMonth.getMonth() + 1;
-        	var year = $scope.invoicedMonth.getFullYear();
+        $scope.date = {isCurrent:true,selectedDate:new Date(), month:0, year:0}; 
 
+		$scope.$watch('date.selectedDate', function(newVal, oldVal){
+         	var currDate = new Date(newVal);
+         	$scope.date.month = currDate.getMonth() + 1;
+         	$scope.date.year = currDate.getFullYear();
+			
 			var ref = new Firebase(FireBaseRoot);
 	  		var projectSync = $firebase(ref.child("invoices")
-	  			.child(year)
-	  			.child(month));
+	  			.child($scope.date.year)
+	  			.child($scope.date.month));
 	  		$scope.projects = projectSync.$asArray();
-		}
+		});
 
-        activate();
-
-        function activate() {
-        	$scope.SelectProject();
-        }
-
-        $scope.updateEvolution = function(updatedProj, evolution) {
-        	var month = $scope.invoicedMonth.getMonth() + 1;
-        	var year = $scope.invoicedMonth.getFullYear();
-		    var projectRef = new Firebase(FireBaseRoot + "invoices/" + year +'/' + month + '/' + updatedProj.title)
-		    projectRef.transaction(function(project) {
-		        project.evolution = parseFloat(evolution);
-		        return project;
-		    });
-		};
-
-		$scope.updateCorrection = function(updatedProj, correction) {
-		    var month = $scope.invoicedMonth.getMonth() + 1;
-        	var year = $scope.invoicedMonth.getFullYear();
-		    var projectRef = new Firebase(FireBaseRoot + "invoices/" + year +'/' + month + '/' + updatedProj.title)
-		    projectRef.transaction(function(project) {
-		        project.correction = parseFloat(correction);
-		        return project;
-		    });
+		$scope.update = function(updatedProj) {
+		    var projectRef = new Firebase(FireBaseRoot + "invoices/" + $scope.date.year +'/' + $scope.date.month + '/' + updatedProj.title);
+		    projectRef.update(_.omit(updatedProj, ['$$hashKey', '$id', '$priority']));
 		};
 
 		$scope.total = function(propertyName){
@@ -52,9 +32,6 @@
 			});
 			return Math.round(total *100) /100;
 		}
-
-		
-
     }
 
 })();

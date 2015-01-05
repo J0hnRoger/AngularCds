@@ -4,8 +4,7 @@
   <tabset>
     <tab heading="Général">
     	<div class="tab-header">
-			<input type="date" placeholder="yyyy-MM" ng-model="invoicedMonth" ng-change="SelectProject">
-    	</div>
+			<input type="date" placeholder="yyyy-MM" ng-model="date.selectedDate">
       <div class="table-responsive">
         <table class="table table-striped" >
           <tr>
@@ -18,10 +17,10 @@
               <td>{{project.title}}</td>
               <td>
               	<span ng-click="editingCorr = true;" ng-hide="editingCorr">{{project.correction}}</span>
-              	<input type="text" autofocus="editingCorr" ng-blur="updateCorrection(project, $event.target.value);editingCorr=false;" ng-show="editingCorr" ng-value="project.correction"></td>
+              	<input type="text" autofocus="editingCorr" ng-blur="update(project);editingCorr=false;" ng-show="editingCorr" ng-model="project.correction"></td>
               <td>	
               	<span ng-click="editingEvo = true;" ng-hide="editingEvo">{{project.evolution}}</span>
-              	<input type="text" autofocus="editingEvo" ng-blur="updateEvolution(project, $event.target.value);editingEvo=false;" ng-show="editingEvo" ng-value="project.evolution"></td></td>
+              	<input type="text" autofocus="editingEvo" ng-blur="update(project);editingEvo=false;" ng-show="editingEvo" ng-model="project.evolution"></td></td>
             </tr>
         </tbody>
           <tr>
