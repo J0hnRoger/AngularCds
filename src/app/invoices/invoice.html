@@ -1,36 +1,65 @@
 <h1>Invoice</h1>
 
 <div class="invoice-view">
+  <input type="date" placeholder="yyyy-MM" ng-model="date.selectedDate">
   <tabset>
+    <!-- Général -->
     <tab heading="Général">
-    	<div class="tab-header">
-			<input type="date" placeholder="yyyy-MM" ng-model="date.selectedDate">
-      <div class="table-responsive">
-        <table class="table table-striped" >
-          <tr>
+      <table class="table table-responsive">
+       <tr>
             <th>Projets</th>
             <th>Corrections Facturées</th>
             <th>Evolutions facturées</th>
           </tr>
-          <tbody>
-            <tr ng-repeat="project in projects">
-              <td>{{project.title}}</td>
+        <tr ng-repeat="project in projects">
+           <td>{{project.title}}</td>
               <td>
-              	<span ng-click="editingCorr = true;" ng-hide="editingCorr">{{project.correction}}</span>
-              	<input type="text" autofocus="editingCorr" ng-blur="update(project);editingCorr=false;" ng-show="editingCorr" ng-model="project.correction"></td>
-              <td>	
-              	<span ng-click="editingEvo = true;" ng-hide="editingEvo">{{project.evolution}}</span>
-              	<input type="text" autofocus="editingEvo" ng-blur="update(project);editingEvo=false;" ng-show="editingEvo" ng-model="project.evolution"></td></td>
+                <span ng-click="editingCorr = true;" ng-hide="editingCorr">{{project.correction}}</span>
+                <input type="text" autofocus="editingCorr" ng-blur="update(project);editingCorr=false;" ng-show="editingCorr" ng-model="project.correction">
+              </td>
+              <td>  
+                <span ng-click="editingEvo = true;" ng-hide="editingEvo">{{project.evolution}}</span>
+                <input type="text" autofocus="editingEvo" ng-blur="update(project);editingEvo=false;" ng-show="editingEvo" ng-model="project.evolution">
+              </td>
+            </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th>{{total("correction")}} jours </th>
+            <th>{{total("evolution")}} jours </th>
+          </tr>
+      </table>
+    </tab>
+    <!-- Projects -->
+    <tab ng-repeat="project in projects" heading="{{project.title}}">
+     <div class="tab-header">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tr>
+            <th>Description</th>
+            <th>Date</th>
+            <th><span class="glyphicon glyphicon-euro" aria-hidden="true"></th>
+          </tr>
+          <tbody>
+            <tr ng-repeat="task in project.tasks">
+              <td>{{task.description}}</td>
+              <td>
+                <span ng-click="editingCorr = true;" ng-hide="editingCorr">{{task.startDate | date:'MM/dd/yyyy'}}</span>
+                <input type="text" autofocus="editingCorr" ng-blur="editingCorr=false;" ng-show="editingCorr" ng-model="project.correction"></td>
+              <td>  
+                <span ng-click="editingEvo = true;" ng-hide="editingEvo">{{task.duration | invoicedTime}}</span>
+                <input type="text" autofocus="editingEvo" ng-blur="editingEvo=false;" ng-show="editingEvo" ng-model="project.duration"></td></td>
             </tr>
         </tbody>
           <tr>
             <th>Total</th>
-            <th>{{total("correction")}} jours </th>
-            <th>{{total("evolution")}} jours </th>
+            <th></th>
+            <th>{{totalTasks(project)}} jours </th>
           </tr>
         </table>
     </div>
     </tab>
   </tabset>
-  <hr />
+ 
 </div>
+

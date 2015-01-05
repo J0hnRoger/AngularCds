@@ -4,7 +4,7 @@
         .module('app.invoice', [])
         .controller('invoiceCtrl', invoiceCtrl);
 
-    function invoiceCtrl($scope, $firebase, FireBaseRoot,_) {
+    function invoiceCtrl($scope, $firebase, FireBaseRoot,_, dateService, $filter) {
 
         $scope.date = {isCurrent:true,selectedDate:new Date(), month:0, year:0}; 
 
@@ -31,6 +31,14 @@
 				total += parseFloat(project[propertyName]);
 			});
 			return Math.round(total *100) /100;
+		}
+
+		$scope.totalTasks = function(project){
+			var total = 0;
+			angular.forEach(project.tasks, function (task) {
+				total += parseFloat(task.duration );
+			});
+			return $filter('invoicedTime')(total);
 		}
     }
 
