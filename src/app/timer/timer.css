@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400);
+
+.container{
+	background-color: #64AAF5;
+	cursor: pointer;
+	padding: 0;
+	position: relative;
+	height: 325px;
+}
+
+.timer{
+	margin:0 auto;
+	line-height: 325px;
+	width:325px;
+	text-align: center;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 120px;
+}
+
+.optionalize{
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 35px;
+	background-color: #8FD5A8;
+	position: absolute;
+	width: 100%;
+	margin:0 auto;
+	text-align: center;
+	padding: 45px;
+}
+
+/*Menu*/
+.menu {
+  margin: 0 auto;
+  z-index: 1;
+  padding-left: 1.25em;
+  position: absolute;
+  right: 0px;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 7px solid white;
+  width: 100%;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 18px;
+}
+.menu-bottom {
+  top: 36px;
+}
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}

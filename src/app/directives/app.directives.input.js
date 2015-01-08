@@ -1,5 +1,5 @@
 // Auto focus field
-angular.module('app.directives.input', [])
+angular.module('app.directives')
 .directive('autofocus', function () {
     return {
         scope: {

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.service.date', [])
+        .module('app.services')
         .factory('dateService', factory);
 
     /* @ngInject */

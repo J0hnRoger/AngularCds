@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.service.tasks', [])
+        .module('app.services')
         .factory('tasksService', factory);
 
     function factory($firebase, FireBaseRoot, $q, DayLength, dateService) {

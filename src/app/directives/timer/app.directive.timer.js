@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-.module('app.directives.timer', [])
+.module('app.directives')
     .directive('timer', timer);
 
 function timer ($interval) {

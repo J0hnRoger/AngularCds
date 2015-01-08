@@ -1,7 +1,7 @@
     'use strict';
 
     angular
-        .module('app.directives.toggle', [])
+        .module('app.directives')
         .directive('toggle', toggle);
 
     function toggle () {

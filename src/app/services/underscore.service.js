@@ -1,7 +1,7 @@
 (function() {
 
     angular
-        .module('app.service.underscore', [])
+        .module('app.services')
 	        .factory('_', factory);
 
     function factory() {

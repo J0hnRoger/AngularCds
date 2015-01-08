@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.directives.totalDay', [])
+        .module('app.directives')
         .directive('totalTime', totalTime)
         .directive('decimalPassedTime', decimalPassedTime);
 

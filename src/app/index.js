@@ -8,23 +8,17 @@ angular.module('angularCds', [
             'ngRoute',
             'ui',
             'expertime',
-            'app.directives.timer',
-            'app.directives.toggle',
             'toaster',
-            'app.directives.resizable',
-            'app.service.date',
-            'app.service.tasks',
-            'app.service.underscore',
-            'app.service.projects',
-            'app.filters',
-            'app.directives.input',
-            'app.directives.totalDay',
             'firebase',
             'ui.bootstrap',
     /*Features dependencies*/
+            'app.directives',
+            'app.services',
+            'app.filters',
             'app.taskBumper',
             'app.cdsCalendar',
-            'app.invoice'
+            'app.invoice',
+            'app.timer'
   ])
   .config(routing)
   .constant('FireBaseRoot', 'https://dazzling-inferno-3649.firebaseio.com/')
@@ -33,8 +27,8 @@ angular.module('angularCds', [
    function routing($routeProvider) {
       $routeProvider.when('/', 
       {
-        templateUrl:"app/playground/playground.html",
-        controller : "componentsCtrl"
+        templateUrl:"app/timer/timer.html",
+        controller : "timerCtrl"
       })
         .when('/calendar/', {
             templateUrl:"app/cds-calendar/cds-calendar.html",

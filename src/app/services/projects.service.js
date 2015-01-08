@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.service.projects', [])
+        .module('app.services')
         .factory('projectsService', factory);
 
     /* @ngInject */

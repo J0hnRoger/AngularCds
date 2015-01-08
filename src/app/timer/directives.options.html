@@ -1,0 +1,10 @@
+<div class="menu" ng-click="visible=!visible;">
+	  <span class="menu-global menu-top" ng-class="{ 'menu-top-click' : visible}"></span>
+	  <span class="menu-global menu-middle" ng-class="{ 'menu-middle-click' : visible}"></span>
+	  <span class="menu-global menu-bottom" ng-class="{ 'menu-bottom-click' : visible}"></span>
+</div>
+<div ng-transclude  
+	 style="height:100%"
+	 ng-show="visible" 
+	 ng-class="{optionalize : true, animated: true, bounceInDown: visible, bounceOutUp : !visible}">
+</div>

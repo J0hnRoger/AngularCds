@@ -1,7 +1,7 @@
 (function() {
 
     angular
-        .module('app.directives.resizable', [])
+        .module('app.directives')
         .directive('heightify', heightify);
 
   	function heightify() {
