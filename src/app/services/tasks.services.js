@@ -8,7 +8,7 @@
     function factory($firebase, FireBaseRoot, $q, DayLength, dateService) {
 
     	var projects = [];
-
+        var week = null;
         var service = {
             getTasksByDay: getTasksByDay,
             getWeeksTasks : getWeeksTasks,
@@ -17,7 +17,8 @@
             updateTask : updateTask,
             remove : remove,
             setInvoicedTask : setInvoicedTask,
-            resetInvoicedTask : resetInvoicedTask
+            resetInvoicedTask : resetInvoicedTask,
+            getDurationDay : getDurationDay
         };
         return service;
 
@@ -66,6 +67,14 @@
                     deferred.resolve(days);
                 });
             return deferred.promise;
+        }
+
+        function getDurationDay(day){
+            var duration = 0;
+            angular.forEach(day.tasks, function(task){
+                duration += task.duration;
+            });
+            return duration;
         }
 
         function updateTask(task) {

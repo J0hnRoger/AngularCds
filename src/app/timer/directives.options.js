@@ -10,6 +10,7 @@
         //	<div optionalize>
     	// 		options : <input type='text'/> ... 
         //  </div>
+        // Need animate.css to work : 
         // Creates:
         // 
         var directive = {
@@ -24,6 +25,7 @@
         function link(scope, element, attrs) {
         	scope.visible = false;
     		var container = element.parent().css("position","relative");
+    		
         }
     }
 })();

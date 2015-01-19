@@ -5,7 +5,6 @@
         .module('app.cdsCalendar', [])
         .controller('cdsCalendarCtrl', cdsCalendarCtrl);
 
-    /* @ngInject */
     function cdsCalendarCtrl($scope, dateService, tasksService, projectsService, $firebase, FireBaseRoot, _ , toaster) {
         
         $scope.loading = true;

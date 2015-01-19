@@ -12,8 +12,8 @@ angular.module('angularCds', [
             'firebase',
             'ui.bootstrap',
     /*Features dependencies*/
-            'app.directives',
             'app.services',
+            'app.directives',
             'app.filters',
             'app.taskBumper',
             'app.cdsCalendar',

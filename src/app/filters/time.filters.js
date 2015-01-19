@@ -2,8 +2,7 @@
     'use strict';
 
     angular
-        .module('app.filters', [
-        ])
+        .module('app.filters', [])
         .filter('friendlyHour', friendlyHour)
         .filter('invoicedTime', invoicedTime)
         .filter('passedTime', passedTime)

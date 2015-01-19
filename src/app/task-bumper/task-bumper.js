@@ -4,7 +4,7 @@
         .module('app.taskBumper', [])
         .controller('taskBumperCtrl', taskBumperCtrl);
 
-    function taskBumperCtrl($scope, $window, $firebase, FireBaseRoot, dateService, tasksService, projectsService) {
+    function taskBumperCtrl($scope, dateService, tasksService, projectsService) {
         
         $scope.title = 'taskBumperCtrl';
         $scope.projects = [];

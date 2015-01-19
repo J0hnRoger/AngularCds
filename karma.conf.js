@@ -12,6 +12,10 @@ module.exports = function(config) {
     plugins : [
         'karma-phantomjs-launcher',
         'karma-jasmine'
-    ]
+    ],
+
+    // web server port
+    port: 9876,
+    colors: true
   });
 };
