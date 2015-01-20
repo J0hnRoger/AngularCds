@@ -1,37 +1,160 @@
 /*Base*/
+@font-face {
+    font-family: 'minicons-webalys';
+    src:url('../fonts/minicons-webalys/minicons-webalys.eot');
+    src:url('../fonts/minicons-webalys/minicons-webalys.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/minicons-webalys/minicons-webalys.ttf') format('truetype'),
+        url('../fonts/minicons-webalys/minicons-webalys.svg#minicons-webalys') format('svg'),
+        url('../fonts/minicons-webalys/minicons-webalys.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-.blue{ background-color: #5db2ff;}
-.dark-blue{background-color: #0072c6;}
-.red{ background-color: #ED5564;}
-.dark-red {background-color: #ac193d;}
-.green{ background-color: #48CFAE;}
-.light-green{ background-color: #82ba00;}
-.dark-green{background-color: #008a17;}
-.azur{ background-color: #66FFFF;}
-.orange{ background-color: #ff8f32;}
-.light-blue {background-color: #5db2ff;}
-.dark-orange {background-color: #d24726;}
-.pink {background-color: #dc4fad;}
-.grey {background-color: #A9A9A9;}
+/* Colors */
+:hover.green-sea {
+  background: #19b698;
+}
+:hover.emerland {
+  background: #40d47e;
+}
+:hover.nephritis {
+  background: #2cc36b;
+}
+:hover.peter-river {
+  background: #4aa3df;
+}
+:hover.belize-hole {
+  background: #2e8ece;
+}
+:hover.amethyst {
+  background: #a66bbe;
+}
+:hover.wisteria {
+  background: #9b50ba;
+}
+:hover.wet-asphalt {
+  background: #3d566e;
+}
+:hover.midnight-blue {
+  background: #354b60;
+}
+:hover.sun-flower {
+  background: #f2ca27;
+}
+:hover.orange {
+  background: #f4a62a;
+}
+:hover.carrot {
+  background: #e98b39;
+}
+:hover.pumpkin {
+  background: #ec5e00;
+}
+:hover.alizarin {
+  background: #ea6153;
+}
+:hover.pomegranate {
+  background: #d14233;
+}
+:hover.clouds {
+  background: #fbfcfc;
+ : #bdc3c7;
+}
+:hover.silver {
+  background: #cbd0d3;
+}
+:hover.concrete {
+  background: #a3b1b2;
+}
+:hover.asbestos {
+  background: #8c9899;
+}
+:hover.turquoise {
+  background: #1dd2af;
+}
+
+.turquoise {
+  background: #1ABC9C;
+}
+.green-sea {
+  background: #16A085;
+}
+.emerland {
+  background: #2ECC71;
+}
+.nephritis {
+  background: #27AE60;
+}
+.peter-river {
+  background: #3498DB;
+}
+.belize-hole {
+  background: #2980B9;
+}
+.amethyst {
+  background: #9B59B6;
+}
+.wisteria {
+  background: #8E44AD;
+}
+.wet-asphalt {
+  background: #34495E;
+}
+.midnight-blue {
+  background: #2C3E50;
+}
+.sun-flower {
+  background: #F1C40F;
+}
+.orange {
+  background: #F39C12;
+}
+.carrot {
+  background: #E67E22;
+}
+.pumpkin {
+  background: #D35400;
+}
+.alizarin {
+  background: #E74C3C;
+}
+.pomegranate {
+  background: #C0392B;
+}
+.clouds {
+  background: #ECF0F1;
+ : #bdc3c7;
+}
+.silver {
+  background: #BDC3C7;
+}
+.concrete {
+  background: #95A5A6;
+}
+.asbestos {
+  background: #7F8C8D;
+}
+/* Fins*/
+
 /*Layout*/
 
 /*Module*/
 .cds-calendar-view {margin:0 auto;}
 .cds-calendar-view .day{padding:10px;text-align: center;border-right: solid 1px black;height: 815px;}
 .cds-calendar-view .task{margin: 5px;padding: 5px;min-height: 170px}
-.cds-calendar-view .task input{border-style: none;color:white; background-color: transparent;border-bottom: dashed 1px black;}
-.cds-calendar-view .task input:focus{border-style: none;color:white;outline: none;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input{border-style: none:white; background: transparent;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input:focus{border-style: none:white;outline: none;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input.edit-hour {width:35px;}
 .cds-calendar-view .glyphicon {font-size: 20px;}
-.cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px; color: #333333}
+.cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px;: #333333}
 .cds-calendar-view .glyphicon-plus {text-shadow:none; border:none;font-size: 20px; display: inline-block;float: right;}
 .cds-calendar-view .task .edit-title {font-size: 18px;font-weight: 500;display: block;margin:0 auto; width: 80px;text-align: center}
 .cds-calendar-view .task .task-hour {float: left;font-size: 18px}
 .cds-calendar-view .task .toggle{position: relative;}
 
-.task-bumper-view {height: 100%;}
-.task-bumper-view .project{ margin:3px;text-align: center;min-height: 137px}
-.task-bumper-view .project h3{display:block;}
+.task-bumper-view {height: 100vh; background-color: #2C3E50;}
+.task-bumper-view .project{ width: 25%;height: 33.5%}
+.task-bumper-view .project h3{color:#fff;font-size: 1.55em;padding: 1em;font-weight: 700;text-transform: uppercase;}
 
 .invoice-view table input{width:35px;}
 /*State*/
@@ -79,9 +202,9 @@
     padding: 4px 0;
     margin: 0 0 10px 25px;
     list-style: none;
-    background-color: #ffffff;
-    border-color: #ccc;
-    border-color: rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    border: #ccc;
+    border: rgba(0, 0, 0, 0.2);
     border-style: solid;
     border-width: 1px;
     -webkit-border-radius: 5px;
@@ -99,15 +222,15 @@
     clear: both;
     font-weight: normal;
     line-height: 18px;
-    color: #555555;
+   : #555555;
     white-space: nowrap;
     text-decoration: none;
 }
 
 .ui-state-hover, .ui-state-active {
-    color: #ffffff;
+   : #ffffff;
     text-decoration: none;
-    background-color: #0088cc;
+    background: #0088cc;
     background-image: none;
 }
 
