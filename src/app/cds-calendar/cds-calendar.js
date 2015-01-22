@@ -5,7 +5,7 @@
         .module('app.cdsCalendar', [])
         .controller('cdsCalendarCtrl', cdsCalendarCtrl);
 
-    function cdsCalendarCtrl($scope, dateService, tasksService, projectsService, $firebase, FireBaseRoot, _ , toaster) {
+    function cdsCalendarCtrl($scope, dateService, tasksService, projectsService, _, toaster) {
         
         $scope.loading = true;
        
@@ -19,10 +19,6 @@
             var monday = dateService.getMonday(new Date());
             tasksService.getWeeksTasks(monday)
                 .then(function (week) {
-                    angular.forEach(week, function(day){
-                        
-                    });
-                    
                     $scope.week = week;
                 });
         }
