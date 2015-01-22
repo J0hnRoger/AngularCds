@@ -58,7 +58,6 @@
 }
 :hover.clouds {
   background: #fbfcfc;
- : #bdc3c7;
 }
 :hover.silver {
   background: #cbd0d3;
@@ -123,7 +122,6 @@
 }
 .clouds {
   background: #ECF0F1;
- : #bdc3c7;
 }
 .silver {
   background: #BDC3C7;
@@ -142,11 +140,11 @@
 .cds-calendar-view {margin:0 auto;}
 .cds-calendar-view .day{padding:10px;text-align: center;border-right: solid 1px black;height: 815px;}
 .cds-calendar-view .task{margin: 5px;padding: 5px;min-height: 170px}
-.cds-calendar-view .task input{border-style: none:white; background: transparent;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input{border-style: none; background: transparent;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input:focus{border-style: none:white;outline: none;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input.edit-hour {width:35px;}
 .cds-calendar-view .glyphicon {font-size: 20px;}
-.cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px;: #333333}
+.cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px;}
 .cds-calendar-view .glyphicon-plus {text-shadow:none; border:none;font-size: 20px; display: inline-block;float: right;}
 .cds-calendar-view .task .edit-title {font-size: 18px;font-weight: 500;display: block;margin:0 auto; width: 80px;text-align: center}
 .cds-calendar-view .task .task-hour {float: left;font-size: 18px}
@@ -222,13 +220,11 @@
     clear: both;
     font-weight: normal;
     line-height: 18px;
-   : #555555;
     white-space: nowrap;
     text-decoration: none;
 }
 
 .ui-state-hover, .ui-state-active {
-   : #ffffff;
     text-decoration: none;
     background: #0088cc;
     background-image: none;

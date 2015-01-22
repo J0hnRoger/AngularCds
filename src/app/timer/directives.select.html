@@ -1,0 +1,16 @@
+<div class="cs-select cs-skin-slide" ng-class="{ 'cs-active' : isActive}" tabindex="0">
+	<span class="cs-placeholder" ng-init="model = options[0];isActive = false;" ng-click="isActive = true">{{model}}</span>
+	<div class="cs-options">
+		<ul>
+			<li  ng-click="UpdateSelectedOpt(option)" data-option="" data-value="sightseeing" ng-repeat="option in options">
+				<span>{{option}}</span>
+			</li>
+		</ul>
+	</div>
+
+	<select class="cs-select cs-skin-slide">
+		<option value="sightseeing" data-class="icon-camera"  ng-repeat="option in options">{{time}}</option>
+	</select>
+</div>
+
+

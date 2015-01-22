@@ -43,6 +43,11 @@ angular.module('angularCds', [
         {
             templateUrl:"app/task-bumper/task-bumper.html",
             controller : "taskBumperCtrl"
+        })
+        .when('/sharepoint/',
+        {
+            templateUrl:"../components/CDS.Angular.Pending/pending-request.html",
+            controller : "sharepoint"
         });
     }
 ;
