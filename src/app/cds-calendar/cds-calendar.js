@@ -13,11 +13,9 @@
 
         function activate() {
 
-            var projects = [];
             $scope.projects = projectsService.getProjects();
-
-            var monday = dateService.getMonday(new Date());
-            tasksService.getWeeksTasks(monday)
+            
+            tasksService.getCurrentWeekTasks()
                 .then(function (week) {
                     $scope.week = week;
                 });

@@ -3,23 +3,37 @@
 
     angular
         .module('app.services')
-        .factory('dateService', factory);
+        .factory('dateService', dateService);
 
-    /* @ngInject */
-	    function factory(FireBaseRoot) {
-            var taskPrefixe = "tasks"
+    function dateService(FireBaseRoot) {
+        var taskPrefixe = "tasks"
         var service = {
             getFirstWeekDayTime : getFirstWeekDayTime,
             getDayBeggining : getDayBeggining,
             getTimeStampFromDecimal : getTimeStampFromDecimal,
             getTasksUrl : getTasksUrl,
-            getMonday : getMonday
+            getMonday : getMonday,
+            getFirstMonday : getFirstMonday
         };
 
         return service;
 
         ////////////////
 
+        function getFirstMonday (day){
+            var monday = getMonday(day);
+            var firstMondayNumber = getMondayNumber(monday);
+            monday.setDate(firstMondayNumber);
+            return monday; 
+        }
+
+        function getMondayNumber(monday){
+             var num = monday.getDate();
+            if((num / 7) < 1)
+                return num;
+            return num - 7 * parseInt(num / 7);
+        }
+           
         function getDayBeggining(day){
         	day.setHours(0);
         	day.setMinutes(0);

@@ -155,6 +155,12 @@
 .task-bumper-view .project h3{color:#fff;font-size: 1.55em;padding: 1em;font-weight: 700;text-transform: uppercase;}
 
 .invoice-view table input{width:35px;}
+
+.week-ruler {position: relative;}
+.week-ruler .day-number {float:left;width: 3.5%;height:50px}
+
+
+
 /*State*/
 .animated.ng-enter,
 .animated.ng-leave {

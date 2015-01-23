@@ -11,7 +11,8 @@
         var week = null;
         var service = {
             getTasksByDay: getTasksByDay,
-            getWeeksTasks : getWeeksTasks,
+            getWeekTasks : getWeekTasks,
+            getCurrentWeekTasks : getCurrentWeekTasks,
             getTask : getTask,
             add : add,
             updateTask : updateTask,
@@ -46,7 +47,8 @@
         }
 
         //ToDo - Récupérer le nom des jours à partir du noeud "day"
-        function getWeeksTasks (monday) {
+        function getWeekTasks (monday) {
+
             var deferred = $q.defer();
             var dayStart = monday;
             var days = [{ name : 'Lundi' , tasks : []}, { name : 'Mardi', tasks : []}, { name : 'Mercredi', tasks : []}, { name : 'Jeudi', tasks : []}, { name : 'Vendredi', tasks : []}];
@@ -67,6 +69,12 @@
                     deferred.resolve(days);
                 });
             return deferred.promise;
+        }
+
+        // Shortcut for get currentWeekTask
+        function getCurrentWeekTasks(){
+            var monday = dateService.getMonday(new Date());
+            return getWeekTasks(monday);
         }
 
         function getDurationDay(day){
