@@ -157,8 +157,9 @@
 .invoice-view table input{width:35px;}
 
 .week-ruler {position: relative;}
-.week-ruler .day-number {float:left;width: 3.5%;height:50px}
-
+.week-ruler .day-number {float:left;width: 3.5%;height:50px;background-color: #101010;text-align: center;line-height: 50px;color:rgb(157, 157, 157);}
+.week-ruler .monday {background-color: red; color:#fff;}
+.week-ruler .active {background-color: white; color:black;}
 
 
 /*State*/

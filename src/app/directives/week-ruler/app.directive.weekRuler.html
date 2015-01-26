@@ -1,0 +1,3 @@
+<div class="week-ruler">
+	<div class="day-number" ng-repeat="day in days" ng-class="{ monday : $index % 7 == 0, active : day == current}" ng-click="setCalendarEvents($index, day)">{{day}}<div>
+</div>

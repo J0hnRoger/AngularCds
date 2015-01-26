@@ -63,12 +63,11 @@
             });
         }
 
-        $scope.getTotal = function (day) {
-            var timeSpent = 0; 
-            angular.forEach(day.tasks, function(task){
-                timeSpent += task.duration;
-            })
-            return timeSpent;
+        $scope.setCalendarEvents = function (monday){
+            tasksService.getWeekTasks(monday)
+                .then(function (week) {
+                    $scope.week = week;
+                });
         }
     }
 })();
